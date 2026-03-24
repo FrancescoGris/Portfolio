@@ -606,4 +606,19 @@ footer {
     position: static;
     align-self: flex-start;
 }
+
+.projeto-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.projeto-techs {
+    flex-wrap: wrap;
+}
+
+.projeto-card {
+    overflow: hidden;
+    word-break: break-word;
+}
 }

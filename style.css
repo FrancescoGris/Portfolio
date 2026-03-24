@@ -6,6 +6,11 @@ font-family: 'Times New Roman', Times, serif;
 border: 1px solid red;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 :root {
 --principal: #ffffff;
 --secundaria: #000000;
@@ -501,6 +506,11 @@ color: var(--secundaria);
 header {
 padding: 20px 24px;
 overflow: hidden;
+}
+
+.logo-nome {
+    letter-spacing: 1px;
+    font-size: 20px;
 }
 
 .hamburguer {

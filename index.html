@@ -236,18 +236,18 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const hamburguer = document.getElementById('hamburguer');
-            const nav = document.getElementById('header-nav');
+        const burger = document.getElementById('hamburguer');
+        const nav = document.getElementById('header-nav');
 
-            hamburguer.addEventListener('click', function () {
-                nav.classList.toggle('aberto');
-            });
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('aberto');
+            burger.classList.toggle('aberto');
+        });
 
-            document.querySelectorAll('.button-nav').forEach(link => {
-                link.addEventListener('click', function () {
-                    nav.classList.remove('aberto');
-                });
+        document.querySelectorAll('.button-nav').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('aberto');
+                burger.classList.remove('aberto');
             });
         });
     </script>

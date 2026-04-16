@@ -240,13 +240,9 @@
             const hamburguer = document.getElementById('hamburguer');
             const nav = document.getElementById('header-nav');
 
-            function toggleNav(e) {
-                e.preventDefault();
+            hamburguer.addEventListener('click', function () {
                 nav.classList.toggle('aberto');
-            }
-
-            hamburguer.addEventListener('click', toggleNav);
-            hamburguer.addEventListener('touchstart', toggleNav, { passive: false });
+            });
 
             document.querySelectorAll('.button-nav').forEach(link => {
                 link.addEventListener('click', function () {

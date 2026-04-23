@@ -2,7 +2,7 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: 'Times New Roman', Times, serif;
+font-family: dm-sans, sans-serif;
 }
 
 html, body {
@@ -440,7 +440,7 @@ background: var(--principal);
 border: 1px solid var(--borda);
 color: var(--secundaria);
 font-size: 15px;
-font-family: 'Times New Roman', Times, serif;
+font-family: dm-sans, sans-serif;
 outline: none;
 transition: 0.3s;
 }
@@ -466,7 +466,7 @@ background-color: var(--secundaria);
 color: var(--principal);
 border: none;
 font-size: 15px;
-font-family: 'Times New Roman', Times, serif;
+font-family: dm-sans, sans-serif;
 font-weight: bold;
 cursor: pointer;
 transition: 0.3s;
@@ -621,4 +621,14 @@ footer {
     overflow: hidden;
     word-break: break-word;
 }
+}
+
+.hamburguer.aberto span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburguer.aberto span:nth-child(2) {
+  opacity: 0;
+}
+.hamburguer.aberto span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }

@@ -158,41 +158,40 @@
         <section id="skills">
             <p class="secao-label">O que eu uso</p>
             <h2 class="titulo-secao">Skills</h2>
-            <div class="skills-grid"></div>
-            <div class="skill-grupo">
-                <h3>Frontend</h3>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                </ul>
-            </div>
+            <div class="skills-grid">
+                <div class="skill-grupo">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                    </ul>
+                </div>
 
-            <div class="skill-grupo">
-                <h3>Backend</h3>
-                <ul>
-                    <li>Node.js</li>
-                </ul>
-            </div>
+                <div class="skill-grupo">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
 
-            <div class="skill-grupo">
-                <h3>Ferramentas</h3>
-                <ul>
-                    <li>Git e GitHub</li>
-                    <li>VS Code</li>
-                    <li>Construct</li>
-                </ul>
-            </div>
+                <div class="skill-grupo">
+                    <h3>Ferramentas</h3>
+                    <ul>
+                        <li>Git e GitHub</li>
+                        <li>VS Code</li>
+                        <li>Construct</li>
+                    </ul>
+                </div>
 
-            <div class="skill-grupo">
-                <h3>Idiomas</h3>
-                <ul>
-                    <li>Português — Nativo</li>
-                    <li>Inglês — Avançado</li>
-                </ul>
-            </div>
-
+                <div class="skill-grupo">
+                    <h3>Idiomas</h3>
+                    <ul>
+                        <li>Português — Nativo</li>
+                        <li>Inglês — Avançado</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -207,8 +206,11 @@
                         <a href="https://www.instagram.com/fran_grisf/" target="_blank">
                             Instagram — @fran_grisf
                         </a>
-                        <a href="#" id="whatsapp-link" target="_blank">
-                            WhatsApp — Clique para conversar
+                        <a href="https://wa.me/5544920029508" target="_blank">
+                            Telefone — (44) 92002-9508
+                        </a>
+                        <a href="https://www.linkedin.com/in/francesco-gris-053092355/" target="_blank">
+                            LinkedIn - Francesco Gris
                         </a>
 
                         <script>
@@ -219,9 +221,9 @@
                 </div>
                 <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="b51a3ecd-03e2-4097-8e1a-c51d6c36ca8a">
-                    <input type="text" name="nome" placeholder="Seu nome:">
-                    <input type="email" name="email" placeholder="Seu e-mail:">
-                    <textarea name="mensagem" placeholder="Sua mensagem:"></textarea>
+                    <input type="text" name="nome" placeholder="Seu nome:" required>
+                    <input type="email" name="email" placeholder="Seu e-mail:" required>
+                    <textarea name="mensagem" placeholder="Sua mensagem:" required></textarea>
                     <button type="submit">Enviar mensagem</button>
                 </form>
             </div>
@@ -239,15 +241,18 @@
 
 
     <script>
-        const hamburguer = document.getElementById('hamburguer');
+        const burger = document.getElementById('hamburguer');
         const nav = document.getElementById('header-nav');
-        hamburguer.addEventListener('click', function () {
+
+        burger.addEventListener('click', () => {
             nav.classList.toggle('aberto');
+            burger.classList.toggle('aberto');
         });
 
         document.querySelectorAll('.button-nav').forEach(link => {
-            link.addEventListener('click', function () {
+            link.addEventListener('click', () => {
                 nav.classList.remove('aberto');
+                burger.classList.remove('aberto');
             });
         });
     </script>

@@ -34,6 +34,7 @@
 
     <!-- Menu mobile -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <button class="drawer-close" id="overlay-close" aria-label="Fechar menu">&times;</button>
         <nav class="mobile-nav">
             <a class="mobile-nav-link" href="#sobre">Sobre</a>
             <a class="mobile-nav-link" href="#projetos">Projetos</a>
@@ -59,13 +60,13 @@
                 </div>
             </div>
             <div class="hero-foto">
-                <img src="imgs/foto2.jpg" alt="Foto de Francesco Gris">
+                <img src="imgs/foto1.jpg" alt="Foto de Francesco Gris">
             </div>
         </section>
 
         <section id="sobre">
             <div class="sobre-foto">
-                <img src="imgs/foto1.jpg" alt="Foto de Francesco Gris">
+                <img src="imgs/foto2.jpg" alt="Foto de Francesco Gris">
             </div>
             <div class="sobre-texto">
                 <p class="secao-label">Sobre mim</p>
@@ -277,6 +278,7 @@
             toggle.classList.contains('is-active') ? closeMenu() : openMenu();
         });
 
+        document.getElementById('overlay-close').addEventListener('click', closeMenu);
         overlay.addEventListener('click', closeMenu);
 
         mobileLinks.forEach(link => {

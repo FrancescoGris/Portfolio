@@ -165,6 +165,28 @@ header {
     pointer-events: all;
 }
 
+.drawer-close {
+    position: absolute;
+    top: 24px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    color: var(--secundaria);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.drawer-close:hover {
+    color: var(--cinza);
+}
+
 main {
     padding-top: 90px;
 }

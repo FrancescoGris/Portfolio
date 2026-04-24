@@ -17,18 +17,33 @@
 <body>
     <header>
         <a href="#hero" class="logo-nome">FG</a>
-        <button class="hamburguer" id="hamburguer">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
         <nav class="header-nav" id="header-nav">
             <a class="button-nav" href="#sobre">Sobre</a>
             <a class="button-nav" href="#projetos">Projetos</a>
             <a class="button-nav" href="#skills">Skills</a>
             <a class="button-nav" href="#contato">Contato</a>
         </nav>
+
+        <!-- Botão hambúrguer — visível só no mobile -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
     </header>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <nav class="mobile-nav">
+            <a class="mobile-nav-link" href="#sobre">Sobre</a>
+            <a class="mobile-nav-link" href="#projetos">Projetos</a>
+            <a class="mobile-nav-link" href="#skills">Skills</a>
+            <a class="mobile-nav-link" href="#contato">Contato</a>
+        </nav>
+    </div>
+
+    <!-- Overlay escuro -->
+    <div class="menu-overlay" id="menu-overlay"></div>
 
     <main>
         <section id="hero">
@@ -44,13 +59,13 @@
                 </div>
             </div>
             <div class="hero-foto">
-                <img src="imgs/foto.jpg" alt="Foto de Francesco Gris">
+                <img src="imgs/foto2.jpg" alt="Foto de Francesco Gris">
             </div>
         </section>
 
         <section id="sobre">
             <div class="sobre-foto">
-                <img src="imgs/foto.jpg" alt="Foto de Francesco Gris">
+                <img src="imgs/foto1.jpg" alt="Foto de Francesco Gris">
             </div>
             <div class="sobre-texto">
                 <p class="secao-label">Sobre mim</p>
@@ -212,11 +227,6 @@
                         <a href="https://www.linkedin.com/in/francesco-gris-053092355/" target="_blank">
                             LinkedIn - Francesco Gris
                         </a>
-
-                        <script>
-                            const numero = '554492009508';
-                            document.getElementById('whatsapp-link').href = 'https://wa.me/' + numero;
-                        </script>
                     </div>
                 </div>
                 <form action="https://api.web3forms.com/submit" method="POST">
@@ -239,21 +249,43 @@
         </nav>
     </footer>
 
-
     <script>
-        const burger = document.getElementById('hamburguer');
-        const nav = document.getElementById('header-nav');
+        const toggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('menu-overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('aberto');
-            burger.classList.toggle('aberto');
+        function openMenu() {
+            mobileMenu.classList.add('is-open');
+            overlay.classList.add('is-visible');
+            toggle.classList.add('is-active');
+            toggle.setAttribute('aria-expanded', 'true');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('is-open');
+            overlay.classList.remove('is-visible');
+            toggle.classList.remove('is-active');
+            toggle.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.contains('is-active') ? closeMenu() : openMenu();
         });
 
-        document.querySelectorAll('.button-nav').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('aberto');
-                burger.classList.remove('aberto');
-            });
+        overlay.addEventListener('click', closeMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Fecha com Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
         });
     </script>
 </body>

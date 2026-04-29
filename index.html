@@ -21,15 +21,14 @@
             <a class="button-nav" href="#contato">Contato</a>
         </nav>
 
-        <!-- Botão hambúrguer — visível só no mobile -->
-        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="mobile-menu">
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
         </button>
     </header>
 
-    <!-- Menu mobile -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <button class="drawer-close" id="overlay-close" aria-label="Fechar menu">&times;</button>
         <nav class="mobile-nav">
@@ -40,7 +39,6 @@
         </nav>
     </div>
 
-    <!-- Overlay escuro -->
     <div class="menu-overlay" id="menu-overlay"></div>
 
     <main>
@@ -134,7 +132,9 @@
                         <h3>Teste</h3>
                         <span class="projeto-tag">Site</span>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iure laudantium consequatur. Aperiam debitis magni, aspernatur quo explicabo enim. Enim ex, velit accusamus neque obcaecati quod vero aliquid soluta voluptatum!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iure laudantium consequatur.
+                        Aperiam debitis magni, aspernatur quo explicabo enim. Enim ex, velit accusamus neque obcaecati
+                        quod vero aliquid soluta voluptatum!</p>
                     <div class="projeto-techs">
                         <span>Assembly</span>
                         <span>Cobol</span>
@@ -282,7 +282,6 @@
             link.addEventListener('click', closeMenu);
         });
 
-        // Fecha com Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeMenu();
         });

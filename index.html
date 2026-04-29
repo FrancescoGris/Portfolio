@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de Francesco Gris — Desenvolvedor Full-Stack de Campo Mourão, PR.">
     <meta name="author" content="Francesco Gris">
-    <meta property="og:title" content="Francesco Gris — Portfólio">
-    <meta property="og:description" content="Sites rápidos e profissionais para pequenas empresas.">
-    <meta property="og:url" content="https://francescogris.github.io/portfolio">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imgs/icon.png" type="image/png">
     <title>Francesco Gris — Portfólio de Desenvolvedor Full-Stack</title>
@@ -222,7 +219,7 @@
                         <a href="https://www.instagram.com/francesco.gris/" target="_blank">
                             Instagram — @francesco.gris
                         </a>
-                        <a href="https://wa.me/5544920029508" target="_blank">
+                        <a id="link-whatsapp" href="#" target="_blank">
                             Telefone — (44) 92002-9508
                         </a>
                         <a href="https://www.linkedin.com/in/francesco-gris-053092355/" target="_blank">
@@ -230,8 +227,8 @@
                         </a>
                     </div>
                 </div>
-                <form action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="b51a3ecd-03e2-4097-8e1a-c51d6c36ca8a">
+                <form id="contato-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" id="access-key-input" name="access_key" value="">
                     <input type="text" name="nome" placeholder="Seu nome:" required>
                     <input type="email" name="email" placeholder="Seu e-mail:" required>
                     <textarea name="mensagem" placeholder="Sua mensagem:" required></textarea>
@@ -289,6 +286,12 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeMenu();
         });
+
+        const parts = ['30f345f0', 'af35', '4a80', '8482', 'a3fa54b18132'];
+        document.getElementById('access-key-input').value = parts.join('-');
+
+        const ddi = '55', ddd = '44', num = '920029508';
+        document.getElementById('link-whatsapp').href = 'https://wa.me/' + ddi + ddd + num;
     </script>
 </body>
 
